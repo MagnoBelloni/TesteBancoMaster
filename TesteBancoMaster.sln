@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteBancoMaster.API", "TesteBancoMaster.API\TesteBancoMaster.API.csproj", "{DDFF53CF-5889-4970-BA90-633D048155B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteBancoMaster.Infra", "TesteBancoMaster.Infra\TesteBancoMaster.Infra.csproj", "{72C9EE33-5448-4518-821F-0436A28DA6DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1E96FCCB-8F6E-4558-8AFF-AB977E0251C9}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDFF53CF-5889-4970-BA90-633D048155B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDFF53CF-5889-4970-BA90-633D048155B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDFF53CF-5889-4970-BA90-633D048155B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDFF53CF-5889-4970-BA90-633D048155B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72C9EE33-5448-4518-821F-0436A28DA6DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72C9EE33-5448-4518-821F-0436A28DA6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72C9EE33-5448-4518-821F-0436A28DA6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72C9EE33-5448-4518-821F-0436A28DA6DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E5954C7-78AC-4846-99CD-4A8889ACD4B3}
+	EndGlobalSection
+EndGlobal
