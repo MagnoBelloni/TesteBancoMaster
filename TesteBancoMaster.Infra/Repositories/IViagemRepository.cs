@@ -6,13 +6,13 @@ namespace TesteBancoMaster.Infra.Repositories
 {
     public interface IViagemRepository : IDisposable 
     {
-        IUnitOfWork UnitOfWork { get; }
+        IUnitOfWork UnitOfWork { get; set; }
 
         Task<Viagem> ObterViagem(Expression<Func<Viagem, bool>> query);
         Task<List<Viagem>> ObterViagens(Expression<Func<Viagem, bool>> query);
         Task<List<Viagem>> ObterTodos();
         Task CadastrarViagem(Viagem request);
         void AtualizarViagem(Viagem request);
-        bool DeletarViagem(Viagem viagemId);
+        bool DeletarViagem(Viagem viagem);
     }
 }

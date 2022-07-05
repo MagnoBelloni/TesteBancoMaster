@@ -14,7 +14,8 @@ namespace TesteBancoMaster.Infra.Repositories
             _context = context;
         }
 
-        public IUnitOfWork UnitOfWork => _context;
+        //public IUnitOfWork UnitOfWork => _context;
+        public IUnitOfWork UnitOfWork { get => _context; set { UnitOfWork = value; } }
 
         public async Task<Viagem> ObterViagem(Expression<Func<Viagem, bool>> query)
         {

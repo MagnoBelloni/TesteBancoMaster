@@ -15,13 +15,24 @@ namespace TesteBancoMaster.API.Configurations
 
         public static MapperConfiguration RegisterMaps()
         {
-            var mappingConfig = new MapperConfiguration(config =>
-            {
-                config.CreateMap<ViagemCadastroModelRequest, Viagem>().ReverseMap();
-                config.CreateMap<ViagemAtualizarModelRequest, Viagem>().ReverseMap();
-            });
+            //var mappingConfig = new MapperConfiguration(config =>
+            //{
+            //    config.CreateMap<ViagemCadastroModelRequest, Viagem>().ReverseMap();
+            //    config.CreateMap<ViagemAtualizarModelRequest, Viagem>().ReverseMap();
+            //});
 
-            return mappingConfig;
+            var config = new MapperConfiguration(x => x.AddProfile<MyProfile>());
+
+            return config;
+        }
+    }
+
+    public class MyProfile : Profile
+    {
+        public MyProfile()
+        {
+            CreateMap<ViagemCadastroModelRequest, Viagem>().ReverseMap();
+            CreateMap<ViagemAtualizarModelRequest, Viagem>().ReverseMap();
         }
     }
 }

@@ -33,10 +33,13 @@ namespace TesteBancoMaster.API.Services
         public async Task<Viagem> CadastrarViagem(ViagemCadastroModelRequest request)
         {
             var viagemExistente = await _repository.ObterViagens(x => x.Origem == request.Origem && x.Destino == request.Destino);
-            if (viagemExistente != null)
+            if (viagemExistente.Count > 0)
             {
-                throw new Exception("Viagem já existente");
+                throw new ArgumentException("Viagem já existente");
             }
+
+            if(request.ValorPassagem <= 5)
+                throw new ArgumentException("O valor da passagem deve ser maior que 5");
 
             var viagem = _mapper.Map<Viagem>(request);
             await _repository.CadastrarViagem(viagem);
@@ -50,7 +53,7 @@ namespace TesteBancoMaster.API.Services
             var viagemExistente = await _repository.ObterViagem(x => x.Id == idOrigem);
             if (viagemExistente == null)
             {
-                throw new Exception("Viagem não existente");
+                throw new ArgumentException("Viagem não existente");
             }
 
             viagemExistente.Destino = request.Destino;
@@ -67,7 +70,7 @@ namespace TesteBancoMaster.API.Services
             var viagemExistente = await _repository.ObterViagem(x => x.Id == id);
             if (viagemExistente == null)
             {
-                throw new Exception("Viagem não existente");
+                throw new ArgumentException("Viagem não existente");
             }
 
             var resultado = _repository.DeletarViagem(viagemExistente);
@@ -79,7 +82,7 @@ namespace TesteBancoMaster.API.Services
         public async Task<string> ObterRotaCustoBaixo(ViagemObterRotaCustoBaixoModelRequest request)
         {
             var rotas = await _repository.ObterTodos();
-            if (rotas == null)
+            if (rotas.Count < 1)
             {
                 throw new ArgumentException("O destino/origem informados não existem");
             }
