@@ -1,4 +1,4 @@
-# Para rodar a aplica��o
+# Para rodar a aplicação
 
 # TesteBancoMaster
 
